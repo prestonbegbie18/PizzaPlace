@@ -10,25 +10,21 @@
   <body lang="en-US">
     <div class="container-fluid">
       <form class="form-horizontal">
-        <div class="row myinput-row">
-          <div class="form-group">
-            <label for="pizzaText" class="col-sm-2 control-label">Whaddaya want on your pizza?</label>
-            <div class="col-sm-10">
-              <input type="text" id="pizzaText" class="form-control input-md"
-                  placeholder="list toppings" />
-            </div>
-          </div>
-        </div> <!-- end username row /-->
         <div class="row">
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="button" class="btn btn-primary col-sm-2"
-                onclick="order();"> <!-- Run JavaScript to validate input /-->
-                Order
-              </button>
-            </div>
+          <label for="pizzaText" class="col-sm-2 control-label">Whaddaya want on your pizza?</label>
+          <div class="col-sm-8">
+            <input type="text" id="pizzaText" class="form-control input-md"
+                   placeholder="list toppings" />
           </div>
-        </div> <!-- end button row /-->
+        </div>
+        <div class="row">
+          <div class="col-sm-offset-2 col-sm-2">
+            <button type="button" class="btn btn-primary"
+                    onclick="order();">
+              Order
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   </body>
