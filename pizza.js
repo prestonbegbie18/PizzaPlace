@@ -3,16 +3,23 @@ var meatPizzas = 0;
 var veggiePizzas = 0;
 var customPizzas = 0;
 
-function order()
+function checkTopping(topping)
 {
   var order = document.getElementById("pizzaText").value;
   order = order.toLowerCase();
-  var hasCheese = ( order.search("cheese") >= 0 );
-  var hasPepperoni = ( order.search("pepperoni") >= 0 );
-  var hasSausage = ( order.search("sausage") >= 0 );
-  var hasOnion = ( order.search("onion") >= 0 );
-  var hasOlive = ( order.search("olive") >= 0 );
-  var hasMushroom = ( order.search("mushroom") >= 0 );
+  topping = topping.toLowerCase();
+  return order.search(topping) >= 0;
+}
+
+function order()
+{
+
+  var hasCheese = checkTopping("cheese");
+  var hasPepperoni = checkTopping("pepperoni");
+  var hasSausage = checkTopping("sausage");
+  var hasOnion = checkTopping("ONION");
+  var hasOlive = checkTopping("olive");
+  var hasMushroom = checkTopping("Mushroom");
 
   console.log(order);
   if( hasCheese && !hasPepperoni && !hasSausage && !hasOnion
