@@ -6,33 +6,36 @@ function showValues()
   //veg.defaultChecked = true;
   var name = document.getElementById("orderName");
   //name.value = "Preston";
-
   console.log("Finished Running JavaScript");
-
 }
 
 function order(){
 
   var name = document.getElementById("orderName");
-//get the status of the check box
+  //get the status of the check box
   var veg = document.getElementById("checkVeggies").checked;
-  var pep = document.getElementById("checkPepperoni").checked;
+  var pepperoni = document.getElementById("checkPepperoni").checked;
   var sausage = document.getElementById("checkSausage").checked;
 
-  if(veg == true && pep == true && sausage == true)
+  //check if each checkbox is checked
+  if(pepperoni && sausage && !veg)
   {
-    console.log("Order received by " + name.value);
-    console.log("Order is a supreme pizza");
+    console.log(name.value + " ordered a Meat Lovers Pizza");
   }
-  else if (pep == true && sausage == true)
+  else if(veg && !pepperoni && !sausage)
   {
-    console.log("Order received by " + name.value);
-    console.log("Order is a meatlovers pizza");
+    console.log(name.value + " ordered a Veggie Pizza");
   }
-
-  else if(veg == false && pep == false && sausage == false)
+  else if(veg && pepperoni && sausage)
   {
-    console.log("Order received by " + name.value);
-    console.log("Order is a cheese pizza");
+    console.log(name.value + " ordered a Supreme Pizza");
+  }
+  else if(!veg && !pepperoni && !sausage)
+  {
+    console.log(name.value + " ordered a Cheese Pizza");
+  }
+  else
+  {
+    console.log("Custom pizza received by " + name.value)
   }
 }
