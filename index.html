@@ -14,13 +14,15 @@
           <label for="pizzaText" class="col-sm-2 control-label">Whaddaya want on your pizza?</label>
           <div class="col-sm-8">
             <div class="checkbox">
-              <label><input type="checkbox">Veggies</label>
+              <label><input id="checkVeggies" type="checkbox">
+                Veggies
+              </label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox">Pepperoni</label>
+              <label><input id = "checkPepperoni" type="checkbox">Pepperoni</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox">Sausage</label>
+              <label><input id = "checkSausage" type="checkbox">Sausage</label>
             </div>
           </div>
         </div>
@@ -33,7 +35,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2 col-sm-2">
-            <button type="button" class="btn btn-primary">
+            <button id = "orderButton" type="button" class="btn btn-primary" onclick="order();">
               Order
             </button>
           </div>
