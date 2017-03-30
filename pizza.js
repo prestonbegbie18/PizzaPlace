@@ -1,15 +1,10 @@
-window.onload = showValues;
-
-function showValues()
+function checkoutOrders()
 {
-  var veg = document.getElementById("checkVeggies");
-  //veg.defaultChecked = true;
-  var name = document.getElementById("orderName");
-  //name.value = "Preston";
-  console.log("Finished Running JavaScript");
+  var checkoutName = getCookie("name");
+  console.log(checkoutName);
 }
 
-function order(){
+function getCustomerName(){
 
   var name = document.getElementById("orderName");
   //get the status of the check box
@@ -38,4 +33,30 @@ function order(){
   {
     console.log("Custom pizza received by " + name.value)
   }
+  setCookie("name",name.value, 1)
+  window.location.href="checkout.html";
+}
+
+//setCookie and getCookie are courtesy of w3schools
+//https://www.w3schools.com/js/js_cookies.asp
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
