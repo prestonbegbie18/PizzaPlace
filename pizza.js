@@ -33,7 +33,7 @@ function getCustomerName(){
   {
     console.log("Custom pizza received by " + name.value)
   }
-  setCookie("name",name.value, 1)
+  setCookie("name",name.value, 1);
   window.location.href="checkout.html";
 }
 
